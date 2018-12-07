@@ -1,5 +1,12 @@
 public class DominosFactory implements AbstractFactory {
-    
+    private static DominosFactory dominosfactory = null;
+
+    public DominosFactory getDominosFactory(){
+        if(dominosfactory==null){
+            dominosfactory = new DominosFactory();
+        }
+        return dominosfactory;
+    }
 
     @Override
     public Pizza CreatePizza (String nom){
